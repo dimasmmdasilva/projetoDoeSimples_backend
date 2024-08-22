@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "comments",
     "rest_framework",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -71,6 +73,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "doe_simples_backend.wsgi.application"
 
+CORS_ALLOWED_ORIGINS = [
+    "https://projeto-doe-simples.vercel.app",
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
